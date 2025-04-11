@@ -83,20 +83,17 @@ for idx, item in enumerate(tqdm(clean_data, desc='Embedding Texts')):
 
     if not text:
         continue
-    try:
-        embedding = embed_with_retry(text) # Getting Embedding
+    embedding = embed_with_retry(text) # Getting Embedding
+    if embedding:    
         emebedded_memes.append({
             "filename": file_name,
             "text": text,
             "embedding": embedding
         })
-        if idx and idx % 1000 == 0:
-            print(f"\nEmbedded {idx} / {len(clean_data)}")
+    if idx and idx % 1000 == 0:
+        print(f"\nEmbedded {idx} / {len(clean_data)}")
 
-        time.sleep(0.5) # To avoid hitting rate limits
-
-    except Exception as e:
-        print(f"Error embedding {file_name}: {e}")
+    time.sleep(0.5) # To avoid hitting rate limits
 
 # Save to pickle file
 with open(output_pkl, 'wb') as f:
