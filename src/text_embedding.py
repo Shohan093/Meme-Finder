@@ -38,7 +38,7 @@ def clean_text(text):
     text = re.sub(r'\s+', ' ', text).strip()        # remove extra whitespace
     return text
 
-clean_data = []
+clean_data = [] # Claen data list
 
 for filename, text in meme_data.items():
     cleaned_text = clean_text(text)

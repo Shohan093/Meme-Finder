@@ -18,7 +18,7 @@ from prompt_rewriter import rewrite_promp_with_gemini
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
-EMBEDDING_FILE = BASE_DIR.parent / 'data' / 'meme_embeddings.pkl'
+EMBEDDING_FILE = BASE_DIR.parent / 'data' / 'text_embeddings.pkl'
 IMAGE_DIR = BASE_DIR.parent / 'images'
 
 # Load environment variables
