@@ -35,7 +35,7 @@ image_files = list(IMAGE_DIR.glob('*.jpg')) + \
                         list(IMAGE_DIR.glob('*.webp'))
 print(f"Found {len(image_files)} image files in 'images/'")
 
-for img_path in tqdm(image_files, desc="Extracting text from memes"):
+for img_path in tqdm(image_files, desc="Embedding images:"):
     # img_name = img_path.name
     try:
         image_tensor = process_image(img_path)
